@@ -19,8 +19,17 @@ class AWSIAMProvides(Endpoint):
                                            for unit in self.all_joined_units))
 
     def get_cluster_id(self):
+        """ Gets randomly generated cluster ID. """
+
         return self.all_joined_units.received['cluster_id']
 
     def set_api_server_status(self, status):
+        """ Sets the status of the Kubernetes API server.
+
+            Args:
+                status: Boolean value. True when API server is started
+                        and ready to receive requests.
+        """
+
         for relation in self.relations:
             relation.to_publish['api_server_state'] = status
