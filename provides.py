@@ -19,10 +19,7 @@ class AWSIAMProvides(Endpoint):
                                            for unit in self.all_joined_units))
 
     def get_cluster_id(self):
-        if len(self.all_joined_units) > 0:
-            return self.all_joined_units[0].received['cluster_id']
-        else:
-            return None
+        return self.all_joined_units.received['cluster_id']
 
     def set_api_server_status(self, status):
         for relation in self.relations:
