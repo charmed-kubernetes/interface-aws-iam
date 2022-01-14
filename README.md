@@ -1,7 +1,7 @@
 # aws-iam interface
 
 This interface provides communication between
-[kubernetes-master](https://github.com/charmed-kubernetes/charm-kubernetes-master)
+[kubernetes-control-plane](https://github.com/charmed-kubernetes/charm-kubernetes-master)
 and [aws-iam](https://github.com/charmed-kubernetes/charm-aws-iam)
 subordinate.
 
@@ -9,7 +9,7 @@ It allows the requires side, aws-iam, to know when the api server is
 up and available and to tell the api server when the webhook.yaml
 file is written so that it may restart and use the webhook.
 
-## Provides (kubernetes-master side)
+## Provides (kubernetes-control-plane side)
 
 ### States
  * `aws-iam.available`
@@ -29,7 +29,7 @@ file is written so that it may restart and use the webhook.
    ready for connections. This is needed because the aws-iam charm
    needs to set up the service it will use in order to add the IP
    to the extra sans in the ssl certificate used to secure
-   communication between the master and the service.
+   communication between the control-plane and the service.
 
 ## Requires (aws-iam side)
 
