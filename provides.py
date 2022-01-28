@@ -2,7 +2,7 @@ from charms.reactive import Endpoint
 from charms.reactive import toggle_flag
 
 
-# kubernetes-master side
+# kubernetes-control-plane side
 class AWSIAMProvides(Endpoint):
 
     # called automagically before any decorated handlers, but after
